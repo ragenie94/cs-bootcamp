@@ -11,7 +11,7 @@ flow:
         do:
           io.cloudslang.base.ssh.ssh_command:
             - host: '${host}'
-            - command: "'cd '+get_sp('script_location')+' && rm -f '+filename"
+            - command: "${'cd '+get_sp('script_location')+' && rm -f '+filename}"
             - username: '${username}'
             - password:
                 value: '${password}'
@@ -35,5 +35,5 @@ extensions:
     results:
       SUCCESS:
         0a94b8a4-ff43-ec62-25f5-b802ba565ca2:
-          x: 351
+          x: 260
           y: 93
