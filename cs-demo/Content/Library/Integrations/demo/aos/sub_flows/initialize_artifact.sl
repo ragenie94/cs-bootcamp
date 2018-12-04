@@ -2,13 +2,14 @@ namespace: Integrations.demo.aos.sub_flows
 flow:
   name: initialize_artifact
   inputs:
-    - host: 10.0.46.41
+    - host
     - username: root
-    - password: admin@123
+    - password:
+        default: admin@123
+        sensitive: false
     - artifact_url:
-        default: 'http://vmdocker.hcm.demo.local:36980/job/AOS/lastSuccessfulBuild/artifact/shipex/target/ShipEx.war'
         required: false
-    - script_url: 'http://vmdocker.hcm.demo.local:36980/job/AOS-repo/ws/install_java.sh'
+    - script_url
     - parameters:
         required: false
   workflow:
@@ -81,21 +82,21 @@ flow:
 extensions:
   graph:
     steps:
-      copy_artifact:
-        x: 71
-        y: 103
       artifact_url_isEmpty:
         x: 273
         y: 1
+      copy_artifact:
+        x: 71
+        y: 103
       copy_script:
         x: 389
         y: 93
-      delete_script:
-        x: 272
-        y: 330
       execute_script:
         x: 43
         y: 240
+      delete_script:
+        x: 272
+        y: 330
       is_true:
         x: 516
         y: 315
@@ -107,11 +108,11 @@ extensions:
             targetId: a639dfd9-28f6-36d7-e2e6-460b351622be
             port: 'FALSE'
     results:
-      SUCCESS:
-        ac5ab8d0-3651-528a-2c00-a9b9a1151d98:
-          x: 662
-          y: 262
       FAILURE:
         a639dfd9-28f6-36d7-e2e6-460b351622be:
           x: 669
           y: 376
+      SUCCESS:
+        ac5ab8d0-3651-528a-2c00-a9b9a1151d98:
+          x: 662
+          y: 262

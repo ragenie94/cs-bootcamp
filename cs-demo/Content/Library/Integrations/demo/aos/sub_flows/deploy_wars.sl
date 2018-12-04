@@ -2,11 +2,11 @@ namespace: Integrations.demo.aos.sub_flows
 flow:
   name: deploy_wars
   inputs:
-    - tomcat_host: "${get_sp('ubuntu_vm_ip')}"
-    - account_service_host: "${get_sp('ubuntu_vm_ip')}"
-    - db_host: "${get_sp('ubuntu_vm_ip')}"
-    - username: "${get_sp('ubuntu_vm_username')}"
-    - password: "${get_sp('ubuntu_vm_password')}"
+    - tomcat_host: "${get_sp('tomcat_host')}"
+    - account_service_host: "${get_sp('account_service_host')}"
+    - db_host: "${get_sp('postgres_host')}"
+    - username: "${get_sp('vm_username')}"
+    - password: "${get_sp('vm_password')}"
     - url: "${get_sp('war_repo_root_url')}"
   workflow:
     - deploy_account_service:
