@@ -31,7 +31,7 @@ flow:
               - password: '${password}'
               - artifact_url: "${url+war.lower()+'/target/'+war+'.war'}"
               - script_url: "${get_sp('script_deploy_war')}"
-              - parameters: "db_host+' postgres admin '+tomcat_host+' '+account_service_host"
+              - parameters: "${db_host+' postgres admin '+tomcat_host+' '+account_service_host}"
           break:
             - FAILURE
         navigate:

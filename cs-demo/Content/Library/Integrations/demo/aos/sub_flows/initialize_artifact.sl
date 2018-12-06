@@ -2,14 +2,14 @@ namespace: Integrations.demo.aos.sub_flows
 flow:
   name: initialize_artifact
   inputs:
-    - host
-    - username: root
+    - host: "${get_sp('postgres_host')}"
+    - username: "${get_sp('vm_username')}"
     - password:
-        default: admin@123
+        default: "${get_sp('vm_password')}"
         sensitive: false
     - artifact_url:
         required: false
-    - script_url
+    - script_url: "${get_sp('script_install_postgres')}"
     - parameters:
         required: false
   workflow:

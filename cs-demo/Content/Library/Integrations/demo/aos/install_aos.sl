@@ -3,11 +3,9 @@ flow:
   name: install_aos
   inputs:
     - account_service_host:
-        default: "${get_sp('account_service_host')}"
         required: false
     - tomcat_host: "${get_sp('tomcat_host')}"
     - db_host:
-        default: "${get_sp('postgres_host')}"
         required: false
     - username: "${get_sp('vm_username')}"
     - password: "${get_sp('vm_password')}"
@@ -15,7 +13,7 @@ flow:
     - install_postgres:
         do:
           Integrations.demo.aos.sub_flows.initialize_artifact:
-            - host: '${db_host}'
+            - host: "${get('db_host', tomcat_host)}"
             - username: '${username}'
             - password: '${password}'
             - script_url: "${get_sp('script_install_postgres')}"
@@ -73,8 +71,8 @@ flow:
         do:
           Integrations.demo.aos.sub_flows.deploy_wars:
             - tomcat_host: "${get_sp('tomcat_host')}"
-            - account_service_host: "${get_sp('account_service_host')}"
-            - db_host: "${get_sp('postgres_host')}"
+            - account_service_host: "${get('account_service_host', tomcat_host)}"
+            - db_host: "${get('db_host', tomcat_host)}"
             - username: "${get_sp('vm_username')}"
             - password: "${get_sp('vm_password')}"
             - url: "${get_sp('war_repo_root_url')}"
