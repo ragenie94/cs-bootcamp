@@ -1,6 +1,6 @@
-namespace: Integrations.demo.rpa
+namespace: Integrations.demo.rpa.sub_flows
 flow:
-  name: uft_aos_test
+  name: uft_test
   inputs:
     - aos_host: "${get_sp('tomcat_host')}"
     - aos_user: ragenie94
