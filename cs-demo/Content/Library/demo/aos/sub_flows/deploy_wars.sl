@@ -11,7 +11,7 @@ flow:
   workflow:
     - deploy_account_service:
         do:
-          Integrations.demo.aos.sub_flows.initialize_artifact:
+          demo.aos.sub_flows.initialize_artifact:
             - host: '${account_service_host}'
             - username: '${username}'
             - password: '${password}'
@@ -25,7 +25,7 @@ flow:
         loop:
           for: "war in 'catalog','MasterCredit','order','ROOT','ShipEx','SafePay'"
           do:
-            Integrations.demo.aos.sub_flows.initialize_artifact:
+            demo.aos.sub_flows.initialize_artifact:
               - host: '${tomcat_host}'
               - username: '${username}'
               - password: '${password}'
