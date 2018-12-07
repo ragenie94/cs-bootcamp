@@ -1,4 +1,4 @@
-namespace: Integrations.demo.vmware
+namespace: demo.vmware
 flow:
   name: delpoy_vm
   workflow:

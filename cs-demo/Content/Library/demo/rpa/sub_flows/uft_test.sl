@@ -1,4 +1,4 @@
-namespace: Integrations.demo.rpa.sub_flows
+namespace: demo.rpa.sub_flows
 flow:
   name: uft_test
   inputs:

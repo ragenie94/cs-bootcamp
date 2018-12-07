@@ -1,4 +1,4 @@
-namespace: Integrations.demo.aos
+namespace: demo.aos
 flow:
   name: install_aos
   inputs:

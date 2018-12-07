@@ -1,4 +1,4 @@
-namespace: Integrations.demo.aos.sub_flows
+namespace: demo.aos.sub_flows
 flow:
   name: initialize_artifact
   inputs:

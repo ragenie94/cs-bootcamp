@@ -1,4 +1,4 @@
-namespace: Integrations.demo.aos.tools
+namespace: demo.aos.tools
 flow:
   name: delete_file
   inputs:
