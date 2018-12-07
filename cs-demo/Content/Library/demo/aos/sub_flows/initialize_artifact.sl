@@ -23,7 +23,7 @@ flow:
           - FAILURE: copy_artifact
     - copy_artifact:
         do:
-          Integrations.demo.aos.sub_flows.remote_copy:
+          demo.aos.sub_flows.remote_copy:
             - host: '${host}'
             - username: '${username}'
             - password: '${password}'
@@ -35,7 +35,7 @@ flow:
           - SUCCESS: copy_script
     - copy_script:
         do:
-          Integrations.demo.aos.sub_flows.remote_copy:
+          demo.aos.sub_flows.remote_copy:
             - host: '${host}'
             - username: '${username}'
             - password: '${password}'
@@ -61,7 +61,7 @@ flow:
           - FAILURE: delete_script
     - delete_script:
         do:
-          Integrations.demo.aos.tools.delete_file:
+          demo.aos.tools.delete_file:
             - host: '${host}'
             - username: '${username}'
             - password: '${password}'
